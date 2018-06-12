@@ -1,0 +1,19 @@
+1. describe the problem
+I can duplicate the problem with the code in this directory by two steps:
+(1) change the sixth line of makefile to:   $(OBJDIR)/main: $(OBJDIR)/main.o $(OBJDIR)/A.o $(OBJDIR)/B.o 
+    then: make clean
+          make 
+          ../obj/main       
+    result:
+        hello world
+        hello world
+
+(2)change the sixth line of makefile to:   $(OBJDIR)/main: $(OBJDIR)/main.o $(OBJDIR)/B.o $(OBJDIR)/A.o  
+    then: make clean
+          make 
+          ../obj/main       
+    result:
+                        #yes, this is a blank line
+        hello world
+
+2. I don't know it is nornal or an error, if you know, please tell me.
